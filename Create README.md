@@ -1,11 +1,6 @@
-## Git_Tutorial
+# Git_Practice
 
-# Git-Tutorial
-## Git-Tutorial
-### Git-Tutorial
-README.md
-
-소스코드 블록은 다음과 같이 작성할 수 있습니다.
+## Source Code Block Example
 
 ```c
 #include <Stdio.h>
@@ -16,11 +11,11 @@ int main(void) {
 }
 ```
 
-링크는 다음과 같이 작성할 수 있습니다.
+## Link Tag Example
 
-[블로그 주소] (https://www.naver.com)
+[Naver Blog] (https://www.naver.com)
 
-순서없는 목록은 다음과 같이 작성할 수 있습니다. 
+## Create No Sequence List Example
 
 * Git Tutorial
   * Git Clone
@@ -29,18 +24,19 @@ int main(void) {
     * Git Commit 1)
     * Git Commit 2)
 
-인용 구문은 다음과 같이 작성할 수 있습니다.
+## Quote Example
 
 > 'Let's Study!' - Jubin Lee -
 
-테이블은 다음과 같이 작성할 수 있습니다. 
+## Create Table Example 
 
 Name|English|Information|Math
 ---|---|---|---|
-이주빈|98점|87점|100점
-호이잇|97점|78점|93점
-코리아|89점|93점|97점
+홍길동|98점|87점|100점
+김호이|97점|78점|93점
+박고대|89점|93점|97점
 
-강조는 다음과 같이 할 수 있습니다.
+## Emphasize Sentences Example
 
 **Chicken** eat ~~Allergy~~ generate.
+
