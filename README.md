@@ -28,7 +28,7 @@ Please Contact the Email Address Below~! <br>
 )
 
 ## ⚡ My Works <br>
-### 🤔 Here are some works before you browse my files... <br>
+### 🤔 Here are some works before you enter my page <br>
 
 [Click Here to Download My Git Works]() <br>
 [Click Here to Download COGNEX Insight]() <br>
