@@ -1,25 +1,29 @@
 ## Hi There! 👋
 
-Welcome to my test files & samples
+Welcome to My Testing World!
 
-Here are some ideas to get you started:
+![SoExcited~GIF](https://github.com/user-attachments/assets/9d649e49-9ed5-4f1a-a9ac-18225e84c92d)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
+If You Have Any Questions or Interests, Please Contact the Email Below!
+
+
+[![My Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white "fgh5032@gmail.com")](fgh5032@gmail.com)
+[![My Navermail]]
+
+Here are some ideas to get you started...
+
+- 🔭 I’m currently working on ... IT(?), Cloud(?), Autonomous Driving(?), Etc...
+- 🌱 I’m currently learning ... Linux(Ubuntu), Git(SW), Etc...
+- 👯 I’m looking to collaborate on ... Anything
+- 🤔 I’m looking for help with ... 
 - 💬 Ask me about ...
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 
-# Result Files
+# My Work
 
-<hr>
 
-Contact Below
-
-[![My Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white "fgh5032@gmail.com")](fgh5032@gmail.com)
 
 I'm treating these computer languages <br>
 
@@ -37,3 +41,7 @@ I'm treating these computer languages <br>
 ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+
+## Here is the Manual of Git(.pptx)
+
+[Please Click Here to Download My Manual of Git](https://github.com/LEEJUBIN68/Git_Practice-Materials.github.io/raw/refs/heads/main/Learning%20Git%20Base.zip)
