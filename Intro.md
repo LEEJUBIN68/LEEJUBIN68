@@ -1,14 +1,6 @@
-# Git_Practice
-
-Hello! I'm testing my Github profile!
+# Github_Tag_Practice
 
 <hr>
-
-Contact Below
-
-[![My Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white "fgh5032@gmail.com")](fgh5032@gmail.com)
-
-I'm treating these computer languages <br>
 
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -24,6 +16,9 @@ I'm treating these computer languages <br>
 ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+<br>
+
+<hr>
 
 ## Source Code Block Example
 
@@ -36,9 +31,13 @@ int main(void) {
 }
 ```
 
+<hr>
+
 ## Link Tag Example
 
 [Move to "Naver.com"](https://www.naver.com)
+
+<hr>
 
 ## Create No Sequence List Example
 
@@ -49,9 +48,13 @@ int main(void) {
     * Git Commit 1)
     * Git Commit 2)
 
+<hr>
+
 ## Quote Example
 
 > 'Let's Study!' - Jubin Lee -
+
+<hr>
 
 ## Create Table Example 
 
@@ -61,16 +64,16 @@ Name|English|Information|Math
 김호이|97점|78점|93점
 박고대|89점|93점|97점
 
+<hr>
+
 ## Emphasize Sentences Example
 
 **Chicken** eat ~~Allergy~~ generate.
+
+<hr>
 
 ## Insert Image Files Example
 
 ![Image](https://github.com/user-attachments/assets/9169cce2-b352-469e-92d1-957e67b138f5)
 
-## Here is the Manual of Git(.pptx)
-
-[Please Click Here to Download My Manual of Git](https://github.com/LEEJUBIN68/Git_Practice-Materials.github.io/raw/refs/heads/main/Learning%20Git%20Base.zip)
-
-## 
+<hr>
