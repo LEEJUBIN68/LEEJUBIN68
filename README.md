@@ -27,9 +27,8 @@ Please Contact the Email Address Below~! <br>
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white
 )
 
-## ⚡ My Works <br>
-### 🤔 Here are some works before you enter my page... <br>
+## ⚡ My Works ⚡ <br>
 
-[Click Here to Download My Git Works](https://github.com/LEEJUBIN68/LEEJUBIN68/raw/refs/heads/main/Git/GIt(0)%20Base.pptx) <br>
-[Click Here to Download COGNEX Insight]() <br>
-[Click Here to Download Some Certificate]() <br>
+[Click Here to Download Git Manual](https://github.com/LEEJUBIN68/LEEJUBIN68/raw/refs/heads/main/Git/GIt(0)%20Base.pptx) <br>
+[Click Here to Download Smart Factory Works]() <br>
+[Click Here to Download Some My Certificates]() <br>
