@@ -30,6 +30,6 @@ Please Contact the Email Address Below~! <br>
 ## ⚡ My Works <br>
 ### 🤔 Here are some works before you browse my files... <br>
 
-[Click Here to Download My Git Works](https://github.com/LEEJUBIN68/Git_Practice-Materials.github.io/raw/refs/heads/main/Learning%20Git%20Base.zip) <br>
+[Click Here to Download My Git Works](https://github.com/LEEJUBIN68/LEEJUBIN68/blob/main/Zip%20Files/Learning%20Git%20Base.zip) <br>
 [Click Here to Download COGNEX Insight]() <br>
 [Click Here to Download Some Certificate]
