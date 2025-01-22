@@ -29,6 +29,6 @@ Please Contact the Email Address Below~! <br>
 
 ## ⚡ My Works ⚡ <br>
 
-[Click Here to Download Git Manual](https://github.com/LEEJUBIN68/LEEJUBIN68/raw/refs/heads/main/Git/GIt(0)%20Base.pptx) <br>
+[Click Here to Download Git Manual](https://github.com/LEEJUBIN68/LEEJUBIN68/raw/refs/heads/master/Git.zip) <br>
 [Click Here to Download Smart Factory Works]() <br>
 [Click Here to Download Some My Certificates]() <br>
