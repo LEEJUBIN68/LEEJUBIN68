@@ -9,7 +9,7 @@ Please Contact the Email Address Below~! <br>
 
 [![My Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white "fgh5032@gmail.com")](fgh5032@gmail.com)
 
-## 🌱 My Language Skills
+## 🌱 My Language Skills...
 
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
