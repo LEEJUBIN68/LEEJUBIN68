@@ -18,3 +18,4 @@ https://github.com에 접속해서 회원가입 또는 로그인을 진행해주
 다음과 같은 사진처럼 Setting 창에 들어가주세요.
 ```
 
+![스크린샷 2025-01-24 104627](C:\Users\admin\Desktop\images\Github Manual\스크린샷 2025-01-24 104627.png)
