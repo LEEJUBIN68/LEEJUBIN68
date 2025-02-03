@@ -113,6 +113,15 @@ What is the 'SWAP'?:
 
 ![Image](https://github.com/user-attachments/assets/6cc2da8e-e947-4912-9e19-a9b3ebe2ff0d)
 
+```txt
+swap -a: /etc/fstab 파일을 참고하여, Swap 영역 활성화.
+swap -p: Swap 영역을 활성화 할 때, 우선순위 지정.
+swap -s: 활성화된 Swap 영역의 정보를 출력.
+swapon/swapoff: 스왑 영역 활성화 / 해제.
+free: 전체 물리메모리의 사이즈 및 사용량, Swap 영역의 사용량 등을 출력.
+free -h: 사용자가 읽기 쉽게, 단위로 출력.
+```
+
 ## _14. ETC_
 
 ```txt
