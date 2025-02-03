@@ -6,29 +6,66 @@ This manual begins with the assumption that you have already installed VMware fr
 If you had not installed VMware, please read the 'Git' manual and come back.
 ```
 
+```txt
+Warning!
+This reference consists of Korean.
+Please bring your own translation.
+```
+
 ## _1. Print Words & Date + Clear Your Commands_
 
 ![Image](https://github.com/user-attachments/assets/05986a94-2e39-42dd-80d3-8cb894ce944c)
+
+```txt
+echo: 문자열, 숫자 등을 출력
+timedatectl: 해당 시간에 대한 정보들을 출력.
+timedatectl set-time "yy-mm-dd": 날짜와 시간 모두 설정.
+timedatectl list-timezones | grep Asia: 원하는 시간대의 국가를 조회.
+timedatectl set-timezone Asia/Seoul: 변경하고자 하는 시간대를 입력 및 변경.
+date: 현재 위치해 있는 시간대를 출력.
+clear: 명령어 Clear.
+```
 
 ## _2. Print History_
 
 ![Image](https://github.com/user-attachments/assets/1daa9717-7c50-4877-ace6-1000e00f88b9) <br>
 ![Image](https://github.com/user-attachments/assets/b8717153-ff1f-4ff3-829e-e11efdfacb8f)
 
+```txt
+history: 지금까지 썼던 명령어들을 모두 출력.
+```
+
 ## _3. Print Before Command_
 
 ![Image](https://github.com/user-attachments/assets/ddf38759-36f5-442b-892f-ed4a3849fe91)
+
+```txt
+!!: 이전에 썼던 명령어를 출력.
+```
 
 ## _4. Print File Path_
 
 ![Image](https://github.com/user-attachments/assets/16e40c92-b6f2-409e-950d-0a656e2f56b9)
 ![Image](https://github.com/user-attachments/assets/ec31e639-cd07-42c9-8e0c-2e549e1ed27a)
 
+```txt
+echo $PATH: 환경변수들의 경로인 path를 출력하는 명령어.
+which: 특정 명령어의 위치를 찾아줌.
+which -a find: 검색 가능한 모든 경로에서, 해당 명령어를 찾아줌.
+whereis: 실행 파일의 위치, 소스 위치, 'man' 페이지 파일의 위치까지 찾아줌.
+locate *.bak: 현재 로컬에 존재하는 '*.bak'파일 찾기.
+locate -n 10 *.conf: 특정 패턴에 해당하는 파일들 중에서 지정한 개수만큼 검색.
+```
+
 ## _5. Install Calendar Packages_
 
 ![Image](https://github.com/user-attachments/assets/69c85722-b494-4800-9b46-ca26c2a8ad12)
 ![Image](https://github.com/user-attachments/assets/a7251dfa-e770-4628-8c51-2319a696e0b6)
 ![Image](https://github.com/user-attachments/assets/09db662f-bd6f-4974-ac22-93e45d1a8ff3)
+
+```txt
+sudo apt install: 다양한 Package를 다운받을 수 있음(본 과정은 Calendar를 출력하기 위한 패키지 설치 과정).
+```
 
 ## _6. Print Calendar_
 
