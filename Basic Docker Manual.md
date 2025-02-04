@@ -176,4 +176,121 @@ Nginx란 여러 기능을 가진 Server 중 하나를 의미한다.
    많이 누적되어 있다면, 위의 명령어처럼 응용해서 사용할 수 있다는 것도 알아두자.
 ```
 
+<hr>
+
+# _🪄 Execute & Create Container_
+
+![Image](https://github.com/user-attachments/assets/a1652f31-2a65-4b89-bc32-ec869df4863b)
+
+```txt
+>> 'nginx'라는 Image를 생성하여 Container를 만들고 실행해보자!
+```
+
+![Image](https://github.com/user-attachments/assets/509d3a81-1554-4978-b691-4ad37101a127)
+
+```txt
+>> 위에서 보았듯이 Container의 PortID, 생성된 Image 이름, 생성된 날짜 및 상태 등을 확인할 수 있다.
+```
+
+![Image](https://github.com/user-attachments/assets/ec4c3310-2f13-4934-bec9-6c03e118e913)
+
+```txt
+>> ContainerID의 앞자리 3개만 쳐도 Container를 실행시킬 수 있다.
+```
+
+![Image](https://github.com/user-attachments/assets/b3cc43af-1964-4466-afb4-41240a5694b7)
+
+```txt
+>> 그리고, 상태도 업데이트 된다.
+```
+
+<hr>
+
+# _🔥 Applying Container_
+
+```txt
+What is Foreground? ✏️
+>> 내가 실행시킨 프로그램의 내용이 화면에서 실행되고, 출력되는 형태. 즉, 무언가를 설치하거나 실행하였을 때
+   즉각적으로 내가 보이고, 확인할 수 있는 상태를 Foreground라고 부른다.
+>> 이 Foreground 상태에서는 즉각적으로 상태 메세지를 보내야하다 보니, 내가 조작할 수 있는 것이 없다.
+```
+
+```txt
+What is Background? ✏️
+>> 내가 실행시킨 프로그램이 컴퓨터 내부적으로 실행되는 상태. Foreground와 반대로, 현재 프로그램이 실행되거나
+   설치되고 있는 Log를 확인할 수 없다. 즉, 내부적으로 알아서 돌아가는 형태라고 보면 된다.
+>> Background 상태에서는 기다림없이 추가적으로 명령을 내릴 수 있다.
+```
+
+![Image](https://github.com/user-attachments/assets/5ca17fca-802c-48e9-8de4-c8736f7365c5)
+
+```txt
+>> 'nginx'라는 Image를 생성하여 실행한다. 하지만, 설치가 되었다는 말만 나오고, 명령창으로 돌아가지지
+   않는다. 이때, ctrl + c를 누르면 나가질 것이다. 그리고, 이것을 'Foreground' 상태라고 부른다.
+```
+
+![Image](https://github.com/user-attachments/assets/1f178ca9-cfd2-4f90-89b4-939d97acb3e6)
+
+```txt
+>> 이제 우리가 이전(GoormIDE x BootStrap편 참고)에 띄어보았던 Nginx를 이용해서 웹 사이트를 띄워보겠다.
+```
+
+![Image](https://github.com/user-attachments/assets/5d3959e2-be53-4de9-951c-d0d44fa64fdc)
+
+```txt
+>> 우선, 그동안 쌓아놓았던 Container와 Image를 정리하자. 단, 현재 돌아가고 있는 Container 및 Image는
+   서비스를 중단한 후, 제거해야 한다. 그렇지 않으면 오류가 발생할 것이다.
+```
+
+![Image](https://github.com/user-attachments/assets/074d99b9-2184-40ba-a735-d3363f0f5523)
+
+```txt
+>> rm 명령어를 추가하여 넣을 때, 위처럼 Container의 ID를 한꺼번에 입력해서 제거할 수도 있다.
+```
+
+![Image](https://github.com/user-attachments/assets/ea30ea81-60f8-4796-806c-b4839e5d0490)
+
+```txt
+>> Container를 제거하였다면, Image도 빠르게 제거해준다.
+```
+
+![Image](https://github.com/user-attachments/assets/a3e5ccc1-963f-452e-ba99-f3a32205dcd4)
+![Image](https://github.com/user-attachments/assets/0c1a7cc8-1adc-4504-8200-e3660bf13c09)
+
+```txt
+>> 위와 같이 아무것도 뜨지 않는다면 성공.
+```
+
+![Image](https://github.com/user-attachments/assets/636450c2-0df0-4b28-8e6b-074657bf5114)
+
+```txt
+>> 'nginx'라는 Image 안에 'my-web-server'라는 이름을 붙여서 하나의 Container를 생성하고 실행해보자.
+   이렇게 이름으로 구분되어 있으면, Container를 찾기 더 수월해질 것이다.
+>> 다시 Container와 Image를 제거하고, 다음 과정을 따른다. 
+```
+
+![Image](https://github.com/user-attachments/assets/6b01399c-8456-4bea-8c98-970ea10579ae)
+
+```txt
+>> docker image와 함께 쓸 수 있는 명령어들을 조회할 수 있다. 
+```
+
+![Image](https://github.com/user-attachments/assets/96605cbe-973b-4daa-bd84-acb1dc8be67a)
+
+```txt
+>> docker run 명령어를 조금더 응용해보았다. 위 명령어의 의미는Docker를 실행하는 Host의
+   '4000'번 Port를 Container의 '80'번 Port로 연결하겠다는 뜻이다.
+```
+
+![Image](https://github.com/user-attachments/assets/87209194-6298-4b0b-8285-a3e1118d8937)
+
+```txt
+>> 'Ports'에서 '4000'번 Port를 '80'번 Port로 연결시킨 것을 확인할 수 있다. 이제 Chrome을 켜고 실행해보자.
+```
+
+![Image](https://github.com/user-attachments/assets/8a00dc40-4129-48b9-b009-18a56e536edb)
+
+```txt
+>> 다음과 같이 창이 나온다면 성공이다.
+```
 
