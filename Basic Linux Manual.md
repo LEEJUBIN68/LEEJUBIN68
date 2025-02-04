@@ -131,3 +131,9 @@ What is the 'GCC'?:
 
 ![Image](https://github.com/user-attachments/assets/16a3ef2d-47ac-4cb5-8dac-77d26d4e7959)
 ![Image](https://github.com/user-attachments/assets/d2689fa3-4e84-45a0-b316-a397f7718c55)
+
+
+
+
+
+
