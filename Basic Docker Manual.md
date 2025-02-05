@@ -391,9 +391,49 @@ What is Background? ✏️
 
 <hr>
 
+# _🔌 Connect to Container_
 
+![Image](https://github.com/user-attachments/assets/7bc04b0d-2d7d-44ac-86f2-be4516d421a8)
 
+```txt
+>> 다시 Container를 밀어버리고, 새 Container를 실행시키자.
+```
 
+![Image](https://github.com/user-attachments/assets/75a48148-db6e-4a6d-ace0-cd45ca004479)
+
+```txt
+>> 위의 명령어를 실행시키면, 명령어를 사용하는 사용자가 바뀌게 된다. 즉, Container 내부에 접속된 것이다.
+```
+
+![Image](https://github.com/user-attachments/assets/de145b60-a19e-456a-8ab6-5e2c048dcc83)
+
+```txt
+>> Container 내부의 파일 List들을 출력한다. 그 중 nginx에 관한 파일을 살펴보자.
+```
+
+![Image](https://github.com/user-attachments/assets/ae5c073a-01b5-461b-b38d-7ba990a422aa)
+
+```txt
+>> 'cd /etc/nginx'로 Directory를 이동하고, List를 살펴보자. 가장 눈에 띄는 것은 'nginx.conf' 파일이다.
+```
+
+![Image](https://github.com/user-attachments/assets/6c426e15-e685-4651-91ef-fff8ee57d327)
+
+```txt
+>> 위의 명령어를 실행하면, 파일 내부를 확인할 수 있다. 이 파일은 Container 내부에서 디버깅을 할 때,
+   엔진 세팅을 어떻게 할 것인지 수정할 수 있는 파일이다. 이렇게 Container 내부와 Localhost 사용자를
+   번갈아가면서 파일을 수정하거나 볼 수 있다. 이제 Container에서 나가서 되돌아가보자.
+```
+
+![Image](https://github.com/user-attachments/assets/2474f35e-e966-4f16-abd6-3d591553f602)
+![Image](https://github.com/user-attachments/assets/beef5664-bc9d-4bbc-996f-a67ab7b91e41)
+
+```txt
+>> 위와 같이 exit 명령어 하나만으로 빠져나올 수 있다. ls 명령어로 다시 확인하였더니 Local 환경으로
+   변한 것을 볼 수 있다.
+```
+
+<hr>
 
 
 
