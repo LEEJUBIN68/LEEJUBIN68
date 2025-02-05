@@ -72,8 +72,9 @@ Nginx란 여러 기능을 가진 Server 중 하나를 의미한다.
 ```txt
 >> 위와 같은 에러를 안만나는 것이 좋긴하지만, 위와 같은 충돌이 발생하였다면 아래를 참고하여 해결하길 바란다.
    참고로, 글쓴이는 이와 같은 에러를 만나 고생하였다...
->> 위와 같은 에러는 'docker run --name webserver -d -p 80:80 nginx'를 치게되면 마주할 것이다. (아니면 좋고...)
+>> 위와 같은 에러는 'docker run --name webserver -d -p 80:80 nginx'를 치게되면 마주할 것이다. 
 ```
+~~(아니면 좋고...)~~
 
 ![Image](https://github.com/user-attachments/assets/49fdd621-9e92-477f-8bd4-cb241ee47c4e)
 
@@ -293,4 +294,109 @@ What is Background? ✏️
 ```txt
 >> 다음과 같이 창이 나온다면 성공이다.
 ```
+
+<hr>
+
+# _❌ Delete Option Applying_
+
+![Image](https://github.com/user-attachments/assets/05be5e3c-a835-4edb-bff5-2369131b7089)
+
+```txt
+>> 위와 같이 'nginx' Image 안에 3개의 Container를 생성해보자.  
+```
+
+![Image](https://github.com/user-attachments/assets/f12267e3-6629-4c26-91c0-8e89734824b9)
+
+```txt
+>> 위에서 배웠던 것처럼, Container 서비스를 멈추고 제거를 해야한다. 하지만, 이번에는 조금 더 응용해서 제거하는
+   명령어를 내려보자.
+```
+
+![Image](https://github.com/user-attachments/assets/1ea050c7-1fcd-4ced-9023-afce3348acf2)
+![Image](https://github.com/user-attachments/assets/7c85a190-0a61-48b5-84a0-21a92ef557df)
+
+```txt
+>> 'ps -a'와 'ps'의 차이점은 전체 Container를 조회할 것인지, Local Container만 조회할 것인지의 차이로 나뉜다.
+   즉, 단순히 'ps'만 치게 된다면 Local 상에 있는 Container만 보이기 때문에 Container를 중지시키고
+   제거 후 조회하면 아무것도 보이지 않을 것이다. 하지만, 전체 조회인 'ps -a' 명령어를 치게 되면
+   Stop한 Container를 포함해서 모든 Container의 목록들을 조회할 수 있다.
+```
+
+![Image](https://github.com/user-attachments/assets/e70dc372-e0e7-4a20-b072-8125f717aa5a)
+
+```txt
+>> 우리의 목적인 'rm'을 응용해서 위와 같은 명령어를 내려보았다. 단순히 'rm' 명령어를 쳐서 Container를
+   일일이 지우기는 번거로울 것이다. 그래서 응용한 것이 바로 위의 명령어이다. 이 명령어를 내리게되면,
+   멈춰있는 모든 Container를 한번에 제거할 수 있다.
+>> 'kill' 명령어를 내려, 시스템을 차단하는 방법도 있지만, 최후의 수단으로 쓰길 바란다. 이 명령어를 실행하면
+   파일들이 모두 손상되기 때문에, 컴퓨터가 작동 불가 상태나 급한 상황인 경우가 아닌 이상 사용하면
+   위험할 수 있으니 신중하게 사용하자.
+>> 가장 안전하게 제거하는 것은 'stop' 이후 'remove'하는 것이다.
+```
+
+![Image](https://github.com/user-attachments/assets/d7feb260-3cde-4467-b79d-248477dc4633)
+
+```txt
+>> 위에서 언급하였듯이 Stop을 한 후, 제거하는 것이 가장 안전한 방법이다. 하지만, 우리가 중요한 작업을 하고
+   있는 중이 아니라면, 강제적으로 ShutDown 시키는 법을 알아보겠다. 위의 방법으로 '-f'를 붙이면 강제적으로
+   Stop을 하지 않아도 Container를 강제적으로 삭제시킬 수 있다.
+>> Container나 Image 삭제는 자주쓰게 될 것이니 유의사항과 명령어를 잘 숙지하기를 바란다.
+```
+
+<hr>
+
+# _🪪 Docker Log(History)_
+
+![Image](https://github.com/user-attachments/assets/52f93b74-c50e-47e9-81ca-bebc2b699891)
+
+```txt
+>> Container 하나를 실행해보자.
+```
+
+![Image](https://github.com/user-attachments/assets/2a56afbf-ccd0-410c-aa68-e949f0f7cef3)
+
+```txt
+>> 해당 Container의 ID를 위와 같이 치게되면, 정보들이 나열된다. 하지만, 이 많은 Log들을 보기에는
+   정리도 되어있지않고, 난잡해보인다. 내가 보고싶은 Log만 보는 방법을 아래와 같이 소개한다.
+```
+
+![Image](https://github.com/user-attachments/assets/d9748108-6353-48b2-8ae2-ceed6f17759a)
+
+```txt
+>> 위의 Log들 중에서 [notice]라고 써있는 Log들만 모아서 보고싶어서 마지막 8줄만 보여달라고
+   위와 같이 명령을 내렸다. 이렇게 해당되는 정보만 골라서 조회할 수 있다는 점도 숙지하길 바란다.
+```
+
+![Image](https://github.com/user-attachments/assets/46495eb9-4d51-4342-b050-3b1ad5ddbe57)
+![Image](https://github.com/user-attachments/assets/3f95e9ac-6ccc-473c-8d76-007895228226)
+
+```txt
+>> 이제 Nginx 웹 사이트를 띄워서 해당 페이지의 Log를 출력해보자. Port는 에러가 날 경우, 위와 같이
+   '80:80' Port가 아닌, 다른 Port 번호를 입력해서 명령을 내리길 바란다. (위의 자료 참고)
+```
+
+![Image](https://github.com/user-attachments/assets/f2d149c4-fc9a-41b9-a5d9-157dbf721852)
+
+```txt
+>> 새로고침 버튼을 누르면, 위의 사진처럼 Log가 전달되는 것을 볼 수 있다. 하지만, 웹 페이지의
+   Log들만 보고싶고 쓸데없이 많은 양의 Log들을 모두 보고싶지 않다. 이때는 아래와 같이 실행한다.
+```
+
+![Image](https://github.com/user-attachments/assets/3b3bc7de-56ec-4d3d-916c-7bebc22b6585)
+
+```txt
+>> 위와 같이 명령어를 치게 될 경우, 웹 페이지에서 새로고침 한 Log들만 모아서 출력되는 것을 확인할 수
+   있다. (Foreground 상태에서 나가는 단축키는 Ctrl + c이다. 기억해두자.)
+```
+
+<hr>
+
+
+
+
+
+
+
+
+
 
