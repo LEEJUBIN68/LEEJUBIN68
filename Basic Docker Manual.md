@@ -548,6 +548,8 @@ What is Docker Volume? ✏️
    Container 자체에서 저장 공간을 사용하지 않고, Host 자체의 저장 공간을 공유해서 사용하는 형식이다.
 ```
 
+<hr>
+
 # _🗄️ Docker MySQL_
 
 ![Image](https://github.com/user-attachments/assets/37d65eae-8b81-4d5a-9eec-121dc7611178)
