@@ -435,6 +435,137 @@ What is Background? ✏️
 
 <hr>
 
+# _💽 Install Redis_
+
+```txt
+What is Redis?
+>> Redis란 Remote Dictionary Server의 약자로, 메모리 내에서 데이터가 저장되어, 이를 통한 서비스를
+   제공해주는 형태로 이루어지는 Open Source System이다. 메모리를 기반한 DB로서 키값(Key-Value) 구조의
+   데이터 저장이 가능하며 빠른 조회 및 쓰기를 지원해준다.
+```
+
+![Image](https://github.com/user-attachments/assets/94d3b83e-30dd-4e81-a2b5-4a98f73e3de5)
+
+```txt
+>> 우선 Redis를 가져오기 위해서, DockerHub에 접속해서 Image를 가져오자.
+```
+
+![Image](https://github.com/user-attachments/assets/7a374dfe-70ae-438a-934c-cd653a94ec10)
+![Image](https://github.com/user-attachments/assets/7ca0fbe0-8a4a-47fc-9e67-0606749d4609)
+
+```txt
+>> 검색 창에 Redis를 치고, 오른쪽에 있는 명령어를 확인한다.
+```
+
+![Image](https://github.com/user-attachments/assets/89255d21-00e6-461c-8c86-47a558fa1359)
+
+```txt
+>> Image를 다운로드 받은 후 위와 같이 실행한다. 하지만, 우리는 옵션에 대해 명확히 할 필요가 있다.
+>> '-d' 옵션은 Background 상태에서 실행한다는 뜻이다.
+>> '-p' 옵션은 Port Mapping을 실행할 것이라는 의미이다.
+>> 우리가 Nginx 엔진을 실행하였을 때, 기본으로 하는 Port 번호는 80:80이었다. 하지만, Redis에서는
+   6379:6379이다. 이렇게 Port를 Mapping하면 그 뒤로는 앞에서 배운 명령어 및 과정은 비슷하다.
+```
+
+![Image](https://github.com/user-attachments/assets/7347ba4a-c615-400b-85d2-83a02301f32d)
+
+```txt
+>> 우리가 다운받고자 하는 Image는 Redis이므로, 제대로 다운받아졌는지 확인하기 위해, 위와 같은 명령어를
+   실행한다. 
+```
+
+![Image](https://github.com/user-attachments/assets/2bc45c64-8c3c-4b7f-895e-3a1cf953ff7d)
+
+```txt
+>> 또한, ProcesS가 잘 진행되고 있는지, Container가 잘 실행되고 있는지 위와 같이 확인해준다. Port Mapping도
+   6379번으로 잘 되어있는 것을 확인할 수 있다.
+```
+
+![Image](https://github.com/user-attachments/assets/a4ae7ed6-0a9d-415d-8f0b-c0b2b3334a21)
+
+```txt
+>> 해당 ContainerID의 Log들을 조회할 수도 있다. 아래에 보면, Server Initialized가 되어있는 것을 볼 수 있는데,
+   서버도 잘 실행되었음을 알 수 있는 문구이다.
+```
+
+![Image](https://github.com/user-attachments/assets/940a8bb7-2800-45a4-a295-e0181a4449cb)
+
+```txt
+>> 우리가 지난 시간에 배운 Container에 접속하는 법을 사용해보자. 
+```
+
+![Image](https://github.com/user-attachments/assets/4e075afa-7dd3-44a3-99e8-bc7ce5171e6e)
+
+```txt
+>> 하지만, 그냥 접속한 상태에서 ls를 치게되면, 파일들이 아무것도 없다. 따라서 다른 Directory에 들어가서
+   List들을 찾아보자.
+```
+
+![Image](https://github.com/user-attachments/assets/5576ee6e-6051-4b34-97b0-79bff96fb53f)
+
+```txt
+>> 그중 pwd를 치게되면 경로가 나오게된다. 즉, Container 내부에서 여러 명령어를 치고 있음을 알 수 있다.
+```
+
+![Image](https://github.com/user-attachments/assets/f0204630-c9f7-4a1d-93e8-b0ecb321474b)
+
+```txt
+>> 그중 pwd를 치게되면 경로가 나오게된다. 즉, Container 내부에서 여러 명령어를 치고 있음을 알 수 있다. 최종적으로
+   Redis에 접속하기 위해, 저런 생소한 명령어도 실행해본다. 
+```
+
+![Image](https://github.com/user-attachments/assets/4c290099-e4ef-42f2-bb64-00fabcd1c41a)
+
+```txt
+>> Redis에 접속하여, 여러 명령어를 치고 그 값을 확인해보자. 잘 작동되고 있음을 확인해볼 수 있을 것이다. 다시
+   Local 환경으로 돌아가기 위해, Exit 명령어로 나간다.
+```
+
+![Image](https://github.com/user-attachments/assets/38283ec2-fe0d-4d6d-84f1-fbdf5c8657c2)
+![Image](https://github.com/user-attachments/assets/a10adb81-2664-4b9f-a4b5-af1b7e81a266)
+![Image](https://github.com/user-attachments/assets/0f580cb2-a9f8-4fb7-bd49-d75c363b8653)
+
+```txt
+>> Container에서 나왔다면, 우리가 수도없이 많이 했던 Container와 Image를 제거해보자. 그 과정과 명령어는 동일하다.
+```
+
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
