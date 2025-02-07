@@ -686,21 +686,61 @@ What is Docker Volume? ✏️
 
 <hr>
 
+# _📂 Execute MySQL Database_
 
+![Image](https://github.com/user-attachments/assets/b1680961-4e6f-44d6-8a24-48ddf95de611)
 
+```txt
+>> 이제 지금까지 배운 내용을 바탕으로, Database를 실행시켜보겠다. Container를 실행시키고, Image는 mysql로 설정한다.
+```
 
+![Image](https://github.com/user-attachments/assets/4ea61e31-a7cb-4cba-a456-1dc67743d856)
 
+```txt
+>> Container 내부에 진입하기 위해, 위와 같은 명령어를 실행한다.
+```
 
+![Image](https://github.com/user-attachments/assets/f9acf1ea-3e79-44df-8db6-7a844ac06858)
 
+```txt
+>> 많이 생소한 명령어를 실행시켜보았다. 위의 명령어를 실행하기 이전에, ls를 먼저 치게되면, MySQL이 설치되어있는 것을
+   확인할 수 있다. 즉, 위의 명령어는 MySQL을 실행하기 위한 명령어로 사용된다. 이제 이 Container의 Database들을 살펴보자.
+>> 비밀번호는 처음 'run' 명령어에서 설정해두었던 비밀번호를 치면 Access된다.
+```
 
+![Image](https://github.com/user-attachments/assets/e69b62f1-4709-4c30-a793-3263acf69f52)
 
+```txt
+>> 정상적으로 들어와졌다면, 위와 같은 화면이 나타난다.
+```
 
+![Image](https://github.com/user-attachments/assets/f6b72d2c-4770-4b4e-95c9-4851f6dc56f5)
 
+```txt
+>> 여기서 Database 하나를 만들어보자. Database 명령어를 칠 때는 항상 ';'를 붙여야한다는 것을 명심하자.
+```
 
+![Image](https://github.com/user-attachments/assets/2aed508f-5ef6-4567-ba6b-77d2bc6b3f1c)
 
+```txt
+>> Database가 잘 만들어진 것을 확인할 수 있다.
+```
 
+![Image](https://github.com/user-attachments/assets/d7a0a432-d1cc-4460-9405-9af245499622)
+![Image](https://github.com/user-attachments/assets/83cc928a-2b48-4d0f-adfd-3594e446bccd)
 
+```txt
+>> Container에서 다시 나와서, 해당 Container를 삭제시키고 Database 저장소를 확인해보자.
+```
 
+![Image](https://github.com/user-attachments/assets/4937709b-ca60-4cdb-bcb8-8c9bcb99439f)
+
+```txt
+>> 우리가 만들어두었던 Database는 제거된 것을 확인할 수 있다. 여기서 중요한 점이 Volume을 사용하지
+   않았기 때문에, 데이터가 날라가버린 점이다. 따라서, 이 Volume을 어떻게 사용하면 좋을지 생각해보자.
+```
+
+<hr>
 
 
 
