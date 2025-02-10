@@ -742,5 +742,140 @@ What is Docker Volume? ✏️
 
 <hr>
 
+# _🚩 Docker Volume with SQL(Last)_
 
+![Image](https://github.com/user-attachments/assets/da04c6c6-e3f7-4490-ae88-770f378dfb5d)
 
+~~마지막 챕터이지만, 양이 많으니 참고바란다.~~
+
+```txt
+>> 항상 해왔던 것처럼 위와 같이 Container를 모두 삭제시킨다.
+```
+
+![Image](https://github.com/user-attachments/assets/41ddf673-d010-40e6-8746-ce38a2fb44ff)
+
+```txt
+>> 그리고 자신이 저장하고 싶은 파일을 찾아서, 이동한다. 본 화면은 VMware Linux환경 기준이다.
+```
+
+![Image](https://github.com/user-attachments/assets/74cef2d4-e00b-4b69-b899-60a1400170d4)
+
+```txt
+>> 자신이 저장하고 싶은 파일의 경로를 찾기 위해, 다음과 같은 명령어를 실행한다.
+```
+
+![Image](https://github.com/user-attachments/assets/a08365b7-aa7d-423e-9b95-b0ad72c8afa8)
+```txt
+>> 원하는 Directory 경로에 새로운 파일을 만들고 Directory를 이동한다.
+```
+
+![Image](https://github.com/user-attachments/assets/e305f595-a6e5-419e-8509-5cf64749872d)
+
+```txt
+>> 우리는 Port까지 맵핑하고, Container를 만들어 내부에 접속까지 해보았다. 하지만, 우리가 하고싶은 것은
+   Volume을 사용하여 데이터가 보존되는지에 대한 여부를 발견하기 위함이므로, '-v' 옵션을 추가한다.
+>> 그 뒤에 'pwd' 명령어에서 발견한 경로를 붙여넣고, 우리가 만든 Directory 'docker-mysql' 경로까지
+   추가해준다.
+>> 이후, mysql 데이터가 어디에 저장될 것인지 정해주는 mysql_data:/var/lib/mysql' 옵션을 추가해준다.
+>> 즉, 왼쪽에 있는 값들이 Host 컴퓨터 환경 내의 주소이고, 오른쪽이 Container 내부에서의 주소값이 된다.
+>> 이제 Container를 종료시켜도, 위의 경로에 있는 데이터는 그대로 남아있을 것이다. 
+```
+
+![Image](https://github.com/user-attachments/assets/61c29898-2c20-4973-999d-551e91ca773e)
+
+```txt
+>> Container가 정삭적으로 실행되고 있음을 확인한다. 
+```
+
+![Image](https://github.com/user-attachments/assets/6c868b78-0732-42dc-9799-61b4f2d388f6)
+
+```txt
+>> 'docker exec -it <ContainerID> bash' 명령을 내려서 다음 사진과 같이 Container에 접속한다.
+>> 위에서 설정했던 비밀번호를 치고, 내부로 접속한다.
+```
+
+![Image](https://github.com/user-attachments/assets/9d1e0dcd-fd06-4a95-8a98-060110d7d062)
+
+```txt
+>> Database에 접속해서 DB를 살펴보자.
+```
+
+![Image](https://github.com/user-attachments/assets/5a0a273a-2ded-4806-aab3-5a5af8db3b25)
+
+```txt
+>> 'mydb'라는 새로운 Database를 생성해서 만들자. 이제 이 데이터가 지워지지 않음을 우리는 증명할 것이다.
+```
+
+![Image](https://github.com/user-attachments/assets/e5b376c7-6555-4c06-9955-dc4dbb7a91be)
+
+```txt
+>> 위와 같이 다시 Container를 지우고, 새로운 Container를 다시 생성하자. 명령어는 위에서 내렸던 명령어와
+   모두 동일하다.
+```
+
+![Image](https://github.com/user-attachments/assets/d1190be9-7801-4f4b-bcea-68d135e3163a)
+
+```txt
+>> 미리 설정해두었던 비밀번호를 입력하고, 내부 Container에 다시 진입해보자.
+```
+
+![Image](https://github.com/user-attachments/assets/49d19207-4136-49c5-a8b4-ac4ec15f46bd)
+
+```txt
+>> 우리가 생성했던 'mydb'가 Container를 삭제한 후 다시 조회해도 사라지지 않는 것을 볼 수 있다.
+```
+
+~~Volume은 신이다.~~
+
+![Image](https://github.com/user-attachments/assets/2b6bfc35-5a43-4bb0-a2fe-2aae6af53d29)
+
+```txt
+>> Container를 삭제하고, Directory 내 파일들을 살펴보자.
+```
+
+![Image](https://github.com/user-attachments/assets/985b014b-e7d3-4134-ac66-08e00e4f0066)
+
+```txt
+>> Container 내부에 만든 mysql db가 삭제되지 않았음을 볼 수 있다.
+```
+
+![Image](https://github.com/user-attachments/assets/03f63966-ce8a-41ef-b0c7-e9e1285774f8)
+
+```txt
+>> 이번에는 PASSWORD를 바꿔서 Container를 실행시켜보자. 오류가 발생할 것이다.
+```
+
+![Image](https://github.com/user-attachments/assets/0e97fbd5-47ef-4c82-97e1-127011baf8a6)
+
+```txt
+>> 위와 같이 분명 설정해놓은 'pwd1234'를 입력하였지만, 거부당했다. 그 이유를 살펴보자.
+>> 우리는 맨 처음 mysql Container에서 최초로 'password123'이라는 비밀번호를 설정해두었다.
+   즉, 이 오류를 해결하기 위해서는 초기값을 없애버리고 다시 설정해야한다. 따라서, 다시 Container를
+   삭제하고, 재설정 해야한다. 이미 기존의 데이터에서 비밀번호가 설정된 이상, 모두 초기화하고
+   다시 실행하는 것 밖에는 방법이 없다.
+```
+
+![Image](https://github.com/user-attachments/assets/f36d2d2a-bdf9-4a1e-b94b-085e8352b29e)
+![Image](https://github.com/user-attachments/assets/b012f4f0-d313-4e61-9733-3e96904c095f)
+
+```txt
+>> 모두 지우고 다시 설치하는 과정 중 하나를 소개한다. 위처럼 List에 'mysql_data'가 저장되어있다면,
+   이 데이터를 지우고, 다시 새로운 명령어로 Container를 실행시킬 수 있다.
+```
+
+![Image](https://github.com/user-attachments/assets/5b4d2da9-0bfc-4e70-9c9b-b6318d9e4f48)
+
+```txt
+>> 다시 PASSWORD를 바꿔서 실행해보자.
+```
+
+![Image](https://github.com/user-attachments/assets/b89faa32-710a-4d58-b4dd-f72aa3a24e37)
+
+```txt
+>> 위에서 설정했던 Password 값을 다시 입력하면, Container 내부에 접속이 가능한 것을 볼 수 있다.
+>> 결론적으로, Volume은 초반에 저장을 한 번 하고나면, 불변하는 것을 확인할 수 있다. 이 Volume의
+   특성으로 많은 혼동이 오는데, 꼭 숙지할 수 있도록 하자.
+```
+
+수고하셨습니다~!
+Thank you for reading~! 👍
