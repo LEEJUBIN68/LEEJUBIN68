@@ -21,7 +21,8 @@ _[출처 2](https://www.youtube.com/watch?v=EUc9zz3sMwE&list=PLsGh7Wc318khzAJOJI
 >> 단, Terminal이 나오는 파트도 등장하므로, 가급적이면 Download 받아서 진행할 것을 권장한다.
 ```
 
-
+![Image](https://github.com/user-attachments/assets/f0c0d56c-d30f-44b5-83f8-bc2e28a31085)
+![Image](https://github.com/user-attachments/assets/ab2816b9-c21c-485a-9aaa-8c404d122d80)
 
 ```txt
 >> Installer Program을 다운로드하고 실행하면 위와 같은 화면이 나온다. 1번을 치고, 다음으로 넘어가도록 한다.
@@ -29,20 +30,23 @@ _[출처 2](https://www.youtube.com/watch?v=EUc9zz3sMwE&list=PLsGh7Wc318khzAJOJI
    모두 다운받아 놓아야한다.
 ```
 
+![Image](https://github.com/user-attachments/assets/d6d9cc59-4c02-4efb-94c3-0d9669368679)
+![Image](https://github.com/user-attachments/assets/a6b46b5f-c28f-4185-8665-8587f099a4d2)
+
 ```txt
 >> 설치가 정상적으로 완성된 화면은 위와 같다.
 ```
 
-```txt
->> VScode를 설치한 상태에서, 다음과 같은 폴더 하나를 생성한다.
-```
+![Image](https://github.com/user-attachments/assets/45a39cc8-c7c0-4a42-8021-0f741bc04a0a)
 
 ```txt
->> 잘 작동되는지 시험에 보기 위해, 아래의 Source Code를 복사해서 실행시켜보자.
+>> VScode를 설치한 상태에서, 위와 같은 파일 하나를 생성한다.
+>> 잘 작동되는지 시험해보기 위해, 아래의 Source Code를 복사해서 실행시켜보자.
 ```
+
 ```C++
->> fn main() {
-      println("Hello, World!\n");
+fn main() {
+   println("Hello, World!\n");
 }
 ```
 
