@@ -120,6 +120,182 @@ _[출처 3](https://ng1004.tistory.com/127)_
 
 <hr>
 
+# _🔥 Manual of Rust_
+
+```txt
+>> 변수를 정의하기 이전에 몇몇 오류를 내면서 진행해보도록 하겠다. 그 이유를 알아야 이 Rust를 쓸 수 있으니까.
+   먼저 가장 기초적인 변수 선언부터 해보자.
+```
+
+```C++
+fn main() {
+   let x = 5;
+   println!("The value of x is: {x}");
+}
+```
+
+_다른 언어들과는 다르게, Rust에서 변수 선언은 'let = ?'로 하게 된다._
+
+```C++
+fn main() {
+   let x = 5;
+   println!("The value of x is: {x}");
+
+   x = 6;
+   println!("x 값은: {x}");
+}
+```
+
+_위와 같이 실행해보면, 오류가 발생할 것이다. 그 이유는 Rust에서 변수를 선언할 <br>
+ 경우, 그 변수는 변하지 않기 때문에 다른 변수를 선언할 수 없기 때문이다. 이를 <br>
+ 잘 기억하고 있어야한다. 다른 언어들과 헷갈리지 않도록 조심하자._
+
+```C++
+fn main() {
+   let mut x = 5;
+   println!("The value of x is: {x}");
+
+   x = 6;
+   println!("x 값은: {x}");
+}
+```
+
+_그렇다면, 최초로 선언된 변수를 변하게 하는 법이 무엇이 있을까? 그것은 <br>
+ 바로 영어인 'Immutable'의 반대인 'Mutable'을 써주는 것이다. 앞의 세 <br>
+ 글자를 따서 'mut'를 붙이고, cargo run을 실행해보자. 그러면 우리가 <br>
+ 출력하고 싶은 값을 모두 출력할 수 있을 것이다._
+
+```C++
+fn main() {
+   let mut x = 5;
+   println!("The value of x is: {x}");
+
+   x = 6;
+}
+```
+
+_여기서 Rust가 Trend 언어로 떠오르는 이유를 알 수 있다. 바로 '안정성' 때문인데,
+ <br> 위와 같이 Run을 때리면, "변수 'x = 6'에 대해 사용하지 않았다"는 문구처럼 엄청
+ <br> 간섭을 많이하게 된다. 자유도가 떨어진다는 단점은 어쩔 수 없는 부분이다._
+
+```C++
+fn main() {
+   let mut x = 5;
+   println!("The value of x is: {x}");
+}
+```
+
+_변수를 선언하던, 하지 않던 그것은 내 자유이다. 하지만, 이 Rust에서는 엄격한 Coding으로
+ <br> 사용자들을 유도한다. 위의 Source Code를 실행시켜보자. 이번에는 "변할 수 있는 변수를 모두
+ <br> 선언해"라는 문구로 간섭을 하게 된다. 정말 세세한 것 까지 모두 Coding을 해야하는 답답함이
+ <br> 존재하지만, 안정성 측면을 위한 것이니 조금 더 지켜보면서 코딩을 해보자._
+
+```C++
+fn main() {
+   let x = 5;
+   println!("The value of x is: {x}");
+
+   let x = 7;
+   println!("x 값은: {x}");
+}
+```
+
+_다시 처음으로 돌아와서 변수를 선언해주었다. 하지만, 이번에 변수 2개를 선언하고, 2개 모두
+ <br> 출력하고 싶어서 위와 같은 Source Code를 실행시켰지만, 오류없이 출력되었다. 이것은 기존의
+ <br> 것을 Overriding 즉, 덮어씌웠기 때문이라고 할 수 있다._
+
+```C++
+fn main() {
+   let x = 5;
+   println!("The value of x is: {x}");
+
+   let x = x + 1;
+   println!("Sum is: {x}");
+}
+```
+
+_덮어씌웠다는 증거로, 위의 출력값들을 보면, 변수 'x'에 '+1'을 해서, 총 6의 값이 출력되는 것을 확인할 수 있다._
+
+```C++
+fn main() {
+   let x = 5;
+   println!("The value of x is: {x}");
+
+   {
+      let x = 2;
+      println!("The Lucky Number is: {x}")
+   }
+
+   let x = x + 1;
+   println!("Sum is: {x}");
+}
+```
+
+_위의 Source Code를 실행시켜보면, 3개 모두 출력되는 것을 볼 수 있다._
+
+```C++
+fn main() {
+   let x = 5;
+   println!("The value of x is: {x}");
+
+   {
+      let x = 2;
+      println!("The Lucky Number is: {x}")
+   }
+
+   let x = "My Lucky Number is...";
+   println!("Sum is: {x}");
+}
+```
+
+_마지막 줄처럼 문자열로도 출력할 수 있다. 이때, 새로운 문자열로 <br> 
+ 재정의를 하였기 때문에, 에러가 발생하지 않는다._
+
+```C++
+fn main() {
+   let mut x = 5;
+   println!("The value of x is: {x}");
+
+   {
+      let x = 2;
+      println!("The Lucky Number is: {x}")
+   }
+
+   x = "My Lucky Number is...";
+   println!("Sum is: {x}");
+}
+```
+
+_이 경우에도 엄청난 오류를 맞이할 수 있다. 그 이유는 'mut'를 <br>
+ 사용함으로써, 1번째 변수가 지정되지 않게 되었다. 따라서, 
+ 마지막 줄에 있는 'x'를 'let'으로 다르게 정의해주어야 오류를
+ 면할 수 있다._
+
+```C++
+fn main() {
+   let mut x = 5;
+   println!("The value of x is: {x}");
+
+   {
+      let x = 2;
+      println!("The Lucky Number is: {x}")
+   }
+
+   x = "My Lucky Number is...";
+   println!("Sum is: {x}");
+}
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
