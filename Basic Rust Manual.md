@@ -267,41 +267,30 @@ fn main() {
 ```
 
 _이 경우에도 엄청난 오류를 맞이할 수 있다. 그 이유는 'mut'를 <br>
- 사용함으로써, 1번째 변수가 지정되지 않게 되었다. 따라서, 
- 마지막 줄에 있는 'x'를 'let'으로 다르게 정의해주어야 오류를
- 면할 수 있다._
+ 사용함으로써, 1번째 변수가 지정되지 않게 되었다. 따라서, <br>
+ 마지막 줄에 있는 'x'를 'let'으로 다르게 정의해주어야 오류를 면할 수 있다._
 
 ```C++
 fn main() {
-   let mut x = 5;
-   println!("The value of x is: {x}");
-
-   {
-      let x = 2;
-      println!("The Lucky Number is: {x}")
-   }
-
-   x = "My Lucky Number is...";
-   println!("Sum is: {x}");
+   const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+   println!("{}", THREE_HOURS_IN_SECONDS);
 }
 ```
 
+_이번에는 상수에 대해서 알아보자. 상수는 말 그대로 숫자이다. 단, 문자열은 통하지 않고, <br>
+ 무조건 숫자로 되어있어야 하는 수라고 보면 된다. 'u32'는 Data Type을 나타내는데, 그 
+ 종류는 다양하다. <br> 'u32'라고 한다면, 32bit INTeger라는 의미이다. 더 자세한 정보는 찾아보길
+ 바란다. 상수 선언은 60 x 60 x 3이므로, <br> 출력값은 '10800'이 출력될 것이다._
 
+ ```C++
+fn main() {
+   const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+   THREE_HOURS_IN_SECONDS = 90;
 
+   println!("{}", THREE_HOURS_IN_SECONDS);
+}
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+_상수는 반드시 Data Type을 지정해주어야 한다. 그렇지 않으면, 위의 Source Code 같이 오류가 발생한다. <br>
+ 우리는 여기서 또 한가지 사실을 알게되었다. 상수는 지정이 될 수 없다는 사실을 말이다. 변수는 지정을 <br>
+ 할 수 있었지만, 상수는 지정할 수 없다는 사실까지 학습이 완료되었다면, 이번 Chapter는 성공적이다._
