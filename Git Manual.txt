@@ -1,0 +1,311 @@
+Git Site Deep
+
+Git Visual Studio, Python Connect
+
+Github Login
+
+Create a new repo.
+
+git clone
+git --version
+git config --global user.name "User-Name"
+git config --global user.email "User-Email"
+
+Create a new file(Education) in C Drive
+
+cd C:\Education
+git clone "Github-User-URL(HTTPS)"
+
+Setting(Folder Options)
+
+숨김 파일, 폴더 및 드라이브 표시(Check)
+알려진 파일 형식의 파일 확장명 숨기기(해제)
+
+Create a new file(Document.txt) in C Drive\Education\Git-Tutorial
+
+cd Git-Tutorial
+git add Document.txt
+git commit -m "Add Text File [Document.txt]"
+git push
+
+Check Github Website(F5)
+
+Reference(twbs/Bootstrap)
+Reference(torvalds/Linux)
+
+Create a new file(Tutorials) in C Drive
+
+cd C:\Tutorials
+git clone "Github-User-  URL(HTTPS)"
+dir
+cd Git-Tutorials
+dir
+
+Create a new file(My_Module.py) in C Drive\Tutorials\Git-Tutorial
+
+Python Contents
+
+def add(a, b):
+	return a + b
+
+git status
+git add My_Module.py
+git status
+git reset My_Module.py
+git status
+git add .
+git status
+git commit -m "Add My_Module [Add]"
+git status
+git push
+
+Check Github Website
+
+Python Contents
+
+def sub(a, b):
+	return a - b
+  
+git status
+git checkout -- My_Module.py
+
+Check the My_Module.py File
+
+git status
+
+Python Contents 
+
+def sub(a, b):
+	return a - b
+
+git add .
+git commit -m "Add My_Module [sub]"
+git commit --amend
+
+Check the Window(나가는 btn esc + wq! 명령어, 안될 수도 있음)
+
+git status
+git push
+
+Check the My_Module.py File turns to Add My_Module [Sub]
+
+git pull
+
+Python Contents
+
+def mul(a, b):
+	return a * b
+
+git add .
+git commit -m "Add My_Module[Mul]"
+git status
+git push
+
+Check Website turns to "Add My_Module [Mul]"
+
+git log
+git reset --hard "git log: commit No.(Add Text File [Document.txt])"
+git log
+
+Check log turns to "Head -> main"
+
+git push
+
+Check the err.
+
+git push -f
+
+Check Github Website
+
+Plus Python Prj in C:\Tutorials\Git-Tutorial
+
+Python Contents
+
+def add(a, b):
+	return a + b
+
+git add .
+git commit -m "Add My_Module [Add]"
+git push
+
+Revise Python File
+
+def sub (a, b):
+	return a - b
+
+git commit --amend
+
+Revise Amend Window
+
+[Add & Sub]
+
+Out(ESC + :wq!)
+
+git status
+git log
+
+Check Status turns to [Add & Sub]
+
+git push -f
+
+Check Github Website
+
+git commit --amned
+
+Revise Amend Window
+
+[Add]
+
+Out(ESC + :wq!)
+
+git add .
+git commit -m "Add My_Module [Sub]"
+git push
+
+Check Github Website turns to [Sub]
+
+git branch
+git branch develop
+git branch
+git checkout develop
+git branch
+
+Plus Python Contents
+
+def mul(a, b):
+	return a * b
+
+git add .
+git commit -m "Add My_Module [Mul]"
+git log
+git checkout main
+git merge develop
+git log
+git push
+
+Check Github Website
+
+git branch
+git branch -d develop
+git branch
+
+Check the 'develop' branch
+
+git branch develop
+git branch
+git checkout develop
+git branch
+
+Revise Python File
+
+def div(a, b):
+	return a // b
+
+git add .
+git commit -m "Add My_Module [Div]"
+git log
+git checkout main
+
+Revise Python File
+
+# 주석
+
+git add .
+git commit -m "Add My_Module [Div] & Comment"
+git checkout develop
+git log
+git checkout main
+git merge develop
+
+Revise Python File
+
+def div(a, b):
+<<<<<<< HEAD
+	return a // b # 주석
+=======
+	return a // b
+>>>>>>> develop
+
+git add .
+git commit -m "Add My_Module [Div] & Comment"
+git merge develop
+git log
+git branch -d develop
+git branch
+git log
+git push
+
+Check Github Website
+
+git remote
+git remote show origin
+
+git remote add test URLs
+git remote -v
+git remtoe rename test temp
+git remote -v
+git log origin/main
+git merge origin/main
+git log origin/main
+git remote -v
+git remote rm temp
+git remote -v
+
+git log
+git log --stat
+git log -p -3  
+git log --pretty=oneline
+git log --pretty=format:"%h -> %an, %ar : %s" --graph
+
+README.md File(Reference Git-Tutorial)
+
+Create New File in C:\Git Prj Example)
+
+cd C:\Git Prj Example
+git clone 
+git archive --format=zip main -o Main.zip
+git archive --format=zip main -o ../Main.zip
+
+git init
+
+Create 'Example 1.txt' file
+
+git add .
+git commit -m "Add Example 1.txt"
+git add .
+git commit -m "Update Example 1.txt"
+
+Delete the "Example 1.txt" File
+
+git add .
+git commit -m "Delete Example 1.txt"
+
+Create "Example 2.txt" File
+
+git add .
+git commit -m "Add Example 2.txt"
+git log
+git rebase -i HEAD~3
+
+Change Word in Window
+
+Delete Example 1.txt File "Pick" -> "reword"
+
+Out(ESC + wq!)
+
+Change Word in Window
+
+"Delete" -> "Drop"
+
+Out(ESC + wq!)
+
+git log
+git rebase -i "Update Example 1.txt" Code
+git log  
+
+Change Word "Drop Example 1.txt" "Pick" -> "Drop"
+
+git log
+
+
+
