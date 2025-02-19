@@ -27,6 +27,6 @@ Please Contact the Email Address Below~! <br>
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white
 )
 
-## ⚡ My Works ⚡ <br>
+## ⚡ Certificates! ⚡ <br>
 
 [Click Here to Download Git Manual](https://github.com/LEEJUBIN68/LEEJUBIN68/raw/refs/heads/master/Git.zip) <br>
