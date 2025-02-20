@@ -9,7 +9,7 @@
 
 <hr>
 
-_[Reference](https://aws.amazon.com/ko/what-is/blockchain/?aws-products-all.sort-by=item.additionalFields.productNameLowercase&aws-products-all.sort-order=asc)_
+_[Reference 1](https://aws.amazon.com/ko/what-is/blockchain/?aws-products-all.sort-by=item.additionalFields.productNameLowercase&aws-products-all.sort-order=asc)_
 
 # _🏢 Structure of Rust_
 
@@ -162,13 +162,90 @@ fn main() {
 ```
 
 ```c++
+// 1. 특정 값을 다르게 출력하고 싶을 때는 아래와 같이, mut를 선언 후,
+      해당 값의 Instance를 수정해주면 된다.
+// 2. 우리가 수정한 부분은 RGB중에서 R이므로, 이 값은 100으로 출력될 것이다.
 
+struct User {
+    username: String,
+    email: String,
+    sign_in_count: u64,
+    active: bool,
+}
+
+struct Color(i32, i32, i32);
+
+fn main() {
+    let mut user1 = User {
+        email: String::from("someone2@example.com"),
+        username: String::from("someUsername123"),
+        active: true,
+        sign_in_count: 1,
+    };
+    
+    let mut user2 = User {
+        email: String::from("someone2@example.com"),
+        ..user1
+    };
+    
+    user2.username = String::from("anyusername2");
+    
+    println!("Email: {}, Username: {}\n", user2.email, user2.username);
+    
+    let mut black = Color(0, 0, 0);
+    
+    black.0 = 100;
+    
+    println!("The value R of BlackColor: {}, Value of G: {}, Value of B: {}\n", black.0, black.1, black.2);
+}
 ```
+
+```c++
+// 1. 아래의 예제는 사각형의 넓이를 구하는 공식을 쓴 것이다.
+// 2. 넓이는 음수가 나오지 않을 것이므로, unsigned Integer Data Type을 기입하였고,
+      'area'라는 함수에서 length 변수와 width 변수를 곱하게 만들어주었다.
+// 3. main 함수에서 변수는 각각 50과 30이고, area 함수에 각 값을 대입시키도록 Coding 하였다.
+// 4. 당연히 그 값은 1500이 나올것이다.
+
+fn main() {
+    let length1 = 50;
+    let width1 = 30;
+    
+    println!("The Area of the Rectangle is {} Square PX\n", area(length1, width1));
+}
+
+fn area(length: u32, width: u32) -> u32 {
+    length * width
+}
+```
+
+```c++
+// 1. 이번에는 위를 인용하여, Tuple로 값을 출력해보겠다.
+// 2. 추가적으로, 구조체를 만들어 보기 쉽게 Coding 하였다.
+// 3. 결과값은 동일하다.
+
+struct Rectangle {
+    length: u32,
+    width: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle {length: 50, width: 30};
+    
+    println!("The Area of the Rectangle is {} Square PX\n", area(&rect1));
+}
+
+fn area(rectangle: &Rectangle) -> u32 {
+    rectangle.length * rectangle.width
+}
+```
+
+
 
 <hr>
 
-
-
+_[Reference 2](https://www.youtube.com/watch?v=RyopIyMjtcE&list=PLsGh7Wc318khzAJOJIJpkL0KHMr4iAk0z&index=8)_ <br>
+_[Reference 3](https://rinthel.github.io/rust-lang-book-ko/ch05-03-method-syntax.html)_
 
 
 
