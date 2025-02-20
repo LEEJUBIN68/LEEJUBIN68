@@ -324,16 +324,78 @@ fn calculate_length(s: &String) -> usize {
 
 <hr>
 
+```c++
+// 1. 우리가 가장 먼저 떠오르는 오류는 한 번 선언하면, 그 값은 불변한다는
+      '변수'에서 많이 일어날 것이다.
+// 2. 따라서 우리는 'mut'를 선언하여, 이 값은 언제든지 변할 수 있다고 지정
+      해주었다.
+// 3. 소유권을 변경하고 싶다면, '가변 참조자(Mutable References)'를 사용해야한다.
 
+fn main() {
+    let mut s = String::from("Hello");
+    
+    change(&mut s);
+    
+    println!("{}", s);
+}
 
+fn change(some_string: &mut String) {
+    some_string.push_str(", World!\n");
+}
+```
 
+<hr>
 
+```c++
+// 1. 다만 OwnerShip에 대해서 가변 참조자는 딱 한 번만 쓸 수 있도록 해놓았다.
+// 2. 그 이유는 Data Race라는 것 때문인데, 이는 같은 Thread끼리 다른 Data를
+//    사용하다가 충돌이 일어나는 경우인데, 사전에 이를 방지하기 위해서이다.
+// 3. 다음의 오류를 살펴보자.    
 
+let mut s = String::from("Hello!");
+let r1 = &mut s;
+let r2 = &mut s;
 
+println!("{}, {}\n", r1, r2);
+```
 
+<hr>
 
+```c++
+// 1. 위의 경우, Mutable 변수를 2번이나 선언하였기 때문에, 오류가 발생하였다.
+// 2. 이러한 Data Race 문제를 사전에 방지하기 위해서, Rust에서는 제한을
+      걸어놓는다.
+// 3. 다음으로, '댕클링 참조자(Dangling References)'에 대해 알아보자.
 
+fn main() {
+    let reference_to_nothing = dangle();
+}
 
+fn dangle() -> &String {
+    let s = String::from("Hello!");
+    
+    &s
+}
+```
 
+<hr>
 
+```c++
+// 1. Dangling References도 Rust가 오류를 사전에 방지하기 위해 존재하는 것이다.
+// 2. 위의 경우, Dangle이라는 함수에서 끝나면 바로 해제를 해버리기 때문에,
+      's'는 없는 존재나 마찬가지이다.
+// 3. 이 없는 변수의 주소를 가리키기 때문에, 오류가 나는 것은 당연한 결과일 것이다.
+// 4. 따라서, 이 오류를 해결하기 위해서는 아래와 같이 '&'을 떼고 출력해야한다.
 
+fn main() {
+    let reference_to_nothing = dangle();
+}
+
+fn dangle() -> String {
+    let s = String::from("Hello!");
+    
+    s
+}
+```
+
+<hr>
