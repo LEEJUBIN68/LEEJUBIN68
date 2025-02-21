@@ -240,7 +240,148 @@ fn area(rectangle: &Rectangle) -> u32 {
 }
 ```
 
+```c++
+// 1. 이제 문자열의 길이를 출력해보자. 
+// 2. 아래의 Source Code는 Rectangle이라는 구조체 아래,
+      length, width 변수에 각각 Data Type을 u32로 지정해주었다.
+// 3. impl을 선언함으로써, 그 안에 Method를 만들 수 있게 해주었다.
+// 4. 함수 안에 길이를 출력하는 len() 함수를 기입하였고, 1번째 인자로
+      Self 즉, 자기 자신을 받고 출력할 때 'length'는 struct에서 선언한
+      Data Type이 그대로 적용된다. 또한, 이 length Field 부분을 찾아서
+      출력할 것이다.
+// 5. 최종적으로, Main 함수에서 rect1의 길이를 출력하는 함수를 받아서
+      출력할 것이다. 
 
+struct Rectangle {
+    length: u32,
+    width: u32,
+}
+
+impl Rectangle {
+    fn len(&self) {
+        println!("Len is {}\n", self.length);
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle {length: 50, width: 30};
+    
+    println!("The Area of the Rectangle is {} Square Pixels\n", area(&rect1));
+    
+    rect1.len()
+}
+
+fn area(rectangle: &Rectangle) -> u32 {
+    rectangle.length * rectangle.width
+}
+```
+
+```c++
+// 1. 이번에는 Parameter를 2개 붙이는 법에 대해 알아보겠다.
+// 2. Parameter가 뜻하는 값은 can_hold 함수에 있는 인자들을 뜻한다.
+// 3. 이 Parameter는 무조건 기본으로 오게되고(&self), other 인자에는
+      Rectangle struct를 참조하겠다고 선언하였다.
+// 4. 그리고 Bool Data Type을 입력함으로써, 서로 크기를 비교하여
+      T or F의 값을 출력하도록 지정하였다. 
+
+struct Rectangle {
+    length: u32,
+    width: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.length * self.width
+    } 
+    
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.length > other.length && self.width > other.width
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle {length: 50, width: 30};
+    let rect2 = Rectangle {length: 40, width: 10};
+    let rect3 = Rectangle {length: 45, width: 60};
+    
+    println!("Can Rect1 Hold Rect2? {}\n", rect1.can_hold(&rect2));
+    println!("Can Rect1 Hold Rect3? {}\n", rect2.can_hold(&rect3));
+}
+```
+
+```c++
+// 1. 마지막으로, 연관 함수에 대해 알아보자.
+// 2. 이 함수는 '&self'를 사용하지 않는다. 그 이유는 구조체에서
+      &변수를 사용할 필요가 없기 때문이다. 즉, 더 이상 번거롭게
+      '&Self' 인자를 쓰지 않아도 된다는 의미이다.
+      
+struct Rectangle {
+    length: u32,
+    width: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.length * self.width
+    }
+    
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.length > other.length && self.width > other.width
+    }
+}
+
+impl Rectangle {
+    fn square(size: u32) -> Rectangle {
+        Rectangle {length: size, width: size}
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle {length: 50, width: 30};
+    let rect2 = Rectangle {length: 40, width: 10};
+    let rect3 = Rectangle {length: 45, width: 60};
+    let sq = Rectangle::square(3);
+    
+    println!("Can Rect1 Hold Rect2? {}\n", rect1.can_hold(&rect2));
+    println!("Can Rect2 Hold Rect3? {}\n", rect2.can_hold(&rect3));
+    
+}
+```
+
+```c++
+// 1. 또한, 기존에 있었던 iMPLementation 함수를 그대로 가지고와서 사용해도
+      무방하다.
+
+struct Rectangle {
+    length: u32,
+    width: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.length * self.width
+    }
+    
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.length > other.length && self.width > other.width
+    }
+    
+    fn square(size: u32) -> Rectangle {
+        Rectangle {length: size, width: size}
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle {length: 50, width: 30};
+    let rect2 = Rectangle {length: 40, width: 10};
+    let rect3 = Rectangle {length: 45, width: 60};
+    let sq = Rectangle::square(3);
+    
+    println!("Can Rect1 Hold Rect2? {}\n", rect1.can_hold(&rect2));
+    println!("Can Rect2 Hold Rect3? {}\n", rect2.can_hold(&rect3));
+    
+}
+```
 
 <hr>
 
