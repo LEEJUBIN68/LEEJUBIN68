@@ -349,7 +349,7 @@ fn main() {
 ```
 
 ```c++
-// 1. 또한, 기존에 있었던 iMPLementation 함수를 그대로 가지고와서 사용해도
+// 1. 또한, 기존에 있었던 IMPLementation 함수를 그대로 가지고와서 사용해도
       무방하다.
 
 struct Rectangle {
