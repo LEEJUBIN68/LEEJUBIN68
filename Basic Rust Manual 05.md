@@ -147,8 +147,28 @@ fn main() {
 ```
 
 ```c++
-// 1. 
+// 1. 이번에는 IP 주소를 출력할 수 있도록 Coding 해보자.
+// 2. IP 주소 부분에 127.0.0.0을 출력하도록 만들어보았다.
+// 3. IP 주소는 숫자로만 이루어져 있으므로, String에 관한
+      Instance들은 모두 지워주도록 하겠다.
+// 4. IP 주소는 모두 4자리이므로, 총 4개의 변수를 선언해주었다. 
 
+enum IpAddrKind {
+    V4(u8, u8, u8, u8),
+    V6,
+}
 
+fn main() {
+    let four = IpAddrKind::V4(127, 0, 0, 1);
+    
+    if let IpAddrKind::V4(num1, num2, num3, num4) = four {
+        println!("{}.{}.{}.{}\n", num1, num2, num3, num4);
+    }
+}
+```
+
+```c++
+// 1. 마지막으로, 
 
 ```
+
