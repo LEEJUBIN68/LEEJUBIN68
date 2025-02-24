@@ -379,7 +379,8 @@ fn main() {
     
     println!("Can Rect1 Hold Rect2? {}\n", rect1.can_hold(&rect2));
     println!("Can Rect2 Hold Rect3? {}\n", rect2.can_hold(&rect3));
-    
+
+   println!("The Area of the Rectangle is {} Square Pixels.\n", rect1.area());
 }
 ```
 
@@ -387,12 +388,3 @@ fn main() {
 
 _[Reference 2](https://www.youtube.com/watch?v=RyopIyMjtcE&list=PLsGh7Wc318khzAJOJIJpkL0KHMr4iAk0z&index=8)_ <br>
 _[Reference 3](https://rinthel.github.io/rust-lang-book-ko/ch05-03-method-syntax.html)_
-
-
-
-
-
-
-
-
-
