@@ -108,7 +108,7 @@ fn main() {
 
 enum IpAddrKind {
     V4(String),
-    V6
+    V6,
 }
 
 fn main() {
@@ -165,10 +165,5 @@ fn main() {
         println!("{}.{}.{}.{}\n", num1, num2, num3, num4);
     }
 }
-```
-
-```c++
-// 1. 마지막으로, 
-
 ```
 
