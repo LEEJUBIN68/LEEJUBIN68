@@ -119,7 +119,204 @@ mod 구매작업 {
 ```c++
 // 1. 이제 본격적으로 Block Chain Tech의 Project 예시로
       연습을 해보자.
-// 2. 
+// 2. 아래 예제의 경우, enum Instance 부분에서 Private이
+      기본 값으로 설정되어있기 때문에, 오류가 발생한다.
 
+mod 구매대행주문 {
+    pub mod 웹호스팅 {
+        pub fn 견적문의접수() {}
+        fn 접수확인메일_발송() {}
+    }
+    
+    mod 구매대행견적 {
+        fn 견적메일발송() {}
+        fn 결제받기() {}
+        fn 구매대행주문() {}
+    }
+}
+
+fn vip고객주문() {
+    crate::구매대행주문::웹호스팅::견적문의접수();
+}
+
+// super - 현재 Module의 부모 Module
+
+mod 구매작업 {
+    enum 추가수입 {
+        coupon,
+        rebate,
+    }
+}
+
+fn 기대수익() {
+    let order1 = 구매작업::추가수입::coupon;
+    let order2 = 구매작업::추가수입::rebate;
+}
+```
+
+```c++
+// 1. 아래처럼 Public으로 바꾸면, 정상적으로 실행될 것이다.
+
+mod 구매대행주문 {
+    pub mod 웹호스팅 {
+        pub fn 견적문의접수() {}
+        fn 접수확인메일_발송() {}
+    }
+    
+    mod 구매대행견적 {
+        fn 견적메일발송() {}
+        fn 결제받기() {}
+        fn 구매대행주문() {}
+    }
+}
+
+fn vip고객주문() {
+    crate::구매대행주문::웹호스팅::견적문의접수();
+}
+
+// super - 현재 Module의 부모 Module
+
+mod 구매작업 {
+    pub enum 추가수입 {
+        coupon,
+        rebate,
+    }
+}
+
+fn 기대수익() {
+    let order1 = 구매작업::추가수입::coupon;
+    let order2 = 구매작업::추가수입::rebate;
+}
+```
+
+```c++
+// 1. super 외에도 다양한 KeyWord가 있는데,
+      우선 Use라는 KeyWord를 살펴보겠다.
+// 2. vip고객주문이라는 함수에서 경로가 너무 길다.
+// 3. 이를 Use를 사용하여 줄여보자.
+// 4. 앞의 Crate를 떼어내고, Use KeyWord를 사용해서
+      포괄하여 입력가능하다.
+
+mod 구매대행주문 {
+    pub mod 웹호스팅 {
+        pub fn 견적문의접수() {}
+        fn 접수확인메일_발송() {}
+    }
+    
+    mod 구매대행견적 {
+        fn 견적메일발송() {}
+        fn 결제받기() {}
+        fn 구매대행주문() {}
+    }
+}
+
+use crate::구매대행주문::웹호스팅;
+
+fn vip고객주문() {
+    웹호스팅::견적문의접수();
+}
+
+// super - 현재 Module의 부모 Module
+// use - 긴 Module 경로를 줄임
+// self - 현재 Module
+
+mod 구매작업 {
+    pub enum 추가수입 {
+        coupon,
+        rebate,
+    }
+}
+
+fn 기대수익() {
+    let order1 = 구매작업::추가수입::coupon;
+    let order2 = 구매작업::추가수입::rebate;
+}
+```
+
+```c++
+// 1. 이번에는 Self라는 KeyWord를 사용해서 
+      현재 Module을 출력해보도록 하자.
+// 2. 결과값은 위와 동일하다.
+
+mod 구매대행주문 {
+    pub mod 웹호스팅 {
+        pub fn 견적문의접수() {}
+        fn 접수확인메일_발송() {}
+    }
+    
+    mod 구매대행견적 {
+        fn 견적메일발송() {}
+        fn 결제받기() {}
+        fn 구매대행주문() {}
+    }
+}
+
+use self crate::구매대행주문::웹호스팅;
+
+fn vip고객주문() {
+    웹호스팅::견적문의접수();
+}
+
+// super - 현재 Module의 부모 Module
+// use - 긴 Module 경로를 줄임
+// self - 현재 Module
+
+mod 구매작업 {
+    pub enum 추가수입 {
+        coupon,
+        rebate,
+    }
+}
+
+fn 기대수익() {
+    let order1 = 구매작업::추가수입::coupon;
+    let order2 = 구매작업::추가수입::rebate;
+}
+```
+
+```c++
+// 1. 아래줄 경로도 너무 길다. 이 Instance 경로도 줄여보자.
+// 2. Warning이 많다 할지라도, 정상적으로 Build되는 것을 확인할 수 있다.
+
+mod 구매대행주문 {
+    pub mod 웹호스팅 {
+        pub fn 견적문의접수() {}
+        fn 접수확인메일_발송() {}
+    }
+    
+    mod 구매대행견적 {
+        fn 견적메일발송() {}
+        fn 결제받기() {}
+        fn 구매대행주문() {}
+    }
+}
+
+use self crate::구매대행주문::웹호스팅;
+
+fn vip고객주문() {
+    웹호스팅::견적문의접수();
+}
+
+// super - 현재 Module의 부모 Module
+// use - 긴 Module 경로를 줄임
+// self - 현재 Module
+
+mod 구매작업 {
+    pub enum 추가수입 {
+        coupon,
+        rebate,
+    }
+}
+
+use crate::구매작업::추가수입;
+
+fn 기대수익() {
+    let order1 = 구매작업::추가수입::coupon;
+    let order2 = 구매작업::추가수입::rebate;
+}
+```
+
+```c++
+// 1. 
 
 ```
