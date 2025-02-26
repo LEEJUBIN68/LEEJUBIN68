@@ -316,7 +316,199 @@ fn 기대수익() {
 }
 ```
 
-```c++
-// 1. 
+## _⚙️ Before Setting_
 
+```txt
+>> 난수를 생성하기 이전에, 아래 사진과 같이 세팅을 맞춰준다.
 ```
+
+<hr>
+
+![Image](https://github.com/user-attachments/assets/c6aa2d57-67d2-4601-9112-2d23ea8bae09)
+![Image](https://github.com/user-attachments/assets/d3cfb2ce-15bf-4870-85a5-068d6f8f89ea)
+
+```c++
+// 1. 이제 난수를 생성해보겠다.
+// 2. 첫번째 줄에 난수를 생성하기 위해, use KeyWord를 이용하여
+      Instance를 하나 생성하였다.
+// 3. 이 의미는 rand에서 Rng르 사용하겠다는 의미인데, 마지막 줄에
+      secret_number Instance를 실행하기위해 필요한 것이다.
+// 4. 다음으로 'cargo build'를 실행하게되면, 몇몇 Package들이 설치
+      될 것이다.
+// 5. 몇몇 Warning(경고)문구가 뜨겠지만, Error(오류) 메시지가 없다면
+      성공적으로 설치된 것이라고 보면 된다.
+
+use rand::Rng;
+
+mod 구매대행주문 {
+    pub mod 웹호스팅 {
+        pub fn 견적문의접수() {}
+        fn 접수확인메일_발송() {}
+    }
+    
+    mod 구매대행견적 {
+        fn 견적메일발송() {}
+        fn 결제받기() {}
+        fn 구매대행주문() {}
+    }
+}
+
+// use self::구매대행주문::웹호스팅;
+
+fn vip고객주문() {
+    crate::구매대행주문::웹호스팅::견적문의접수();
+}
+
+// super: 현재 Module의 부모
+// use: 긴 Module 경로를 줄임.
+// self: 현재 Module
+
+mod 구매작업 {
+    pub enum 추가수입 {
+        coupon,
+        rebate,
+    }
+}
+
+// use crate::구매작업::추가수입;
+
+fn 기대추가수입() {
+    let order1 = 추가수입::coupon;
+    let order2 = 추가수입::rebate;
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+}
+```
+
+![Image](https://github.com/user-attachments/assets/70393486-8b92-4bc3-9711-82b6c6cc1d3a)
+![Image](https://github.com/user-attachments/assets/4899d7e6-50a9-4d37-9d8f-81621e408445)
+
+<hr>
+
+```c++
+// 1. 이번에는 Module을 다른 파일로 옮겨보도록 하겠다.
+// 2. 먼저, 위에 있는 사진처럼 Module의 이름인 'client' Module 파일을
+      생성해주고, 그 안에 connect 함수를 삽입하여준다.
+// 3. 'mod client;' Instance에서 이 'client.rs'라는 파일이 분리되어
+      언제든지 가져다 쓸 수 있게되었다.
+// 4. 이렇게 우리는 파일 단위로 Module을 분리하여 편리하게 쓸 수 있다.
+
+use rand::Rng;
+
+mod 구매대행주문 {
+    pub mod 웹호스팅 {
+        pub fn 견적문의접수() {}
+        fn 접수확인메일_발송() {}
+    }
+    
+    mod 구매대행견적 {
+        fn 견적메일발송() {}
+        fn 결제받기() {}
+        fn 구매대행주문() {}
+    }
+}
+
+// use self::구매대행주문::웹호스팅;
+
+fn vip고객주문() {
+    crate::구매대행주문::웹호스팅::견적문의접수();
+}
+
+// super: 현재 Module의 부모
+// use: 긴 Module 경로를 줄임.
+// self: 현재 Module
+
+mod 구매작업 {
+    pub enum 추가수입 {
+        coupon,
+        rebate,
+    }
+}
+
+// use crate::구매작업::추가수입;
+
+fn 기대추가수입() {
+    let order1 = 추가수입::coupon;
+    let order2 = 추가수입::rebate;
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+}
+
+mod client;
+
+mod network {
+    fn connect() {
+        
+    }
+    
+    mod server {
+        fn connect() {
+            
+        }
+    }
+}
+```
+
+![Image](https://github.com/user-attachments/assets/12e7a054-e558-4cc8-9169-ebfc0527493e)
+![Image](https://github.com/user-attachments/assets/ee22686b-0bae-4385-876e-8d2596eb1bb4)
+![Image](https://github.com/user-attachments/assets/77514f9a-8dd3-47c6-af21-dfa53b3e7eb5)
+
+<hr>
+
+```c++
+// 1. 이제 마지막으로, 더 깔끔하게 Directory Module로 분리하려면
+      어떻게 해야하는지 알아보도록 하겠다.
+// 2. 아래의 Code를 보게되면, Network라는 Module 아래, Connect라는
+      함수도 있고, Server라는 Module이 하나 더 생성되어있다.
+// 3. 이럴 경우에는, Network라는 Folder를 생성하여 정리하는 것이
+      가장 깔끔해보일 것이다.
+// 4. 위의 사진처럼 network라는 Folder를 생성하고, mod.rs라는 파일을
+      생성하여 Network Module에 있었던 함수들을 mod.rs로 옮겨보자.
+// 5. 이제 이 모두가 Network라는 Directory를 찾아서 하위에 있는
+      mod.rs를 찾아서 실행하게 할 것이다.
+
+use rand::Rng;
+
+mod 구매대행주문 {
+    pub mod 웹호스팅 {
+        pub fn 견적문의접수() {}
+        fn 접수확인메일_발송() {}
+    }
+    
+    mod 구매대행견적 {
+        fn 견적메일발송() {}
+        fn 결제받기() {}
+        fn 구매대행주문() {}
+    }
+}
+
+// use self::구매대행주문::웹호스팅;
+
+fn vip고객주문() {
+    crate::구매대행주문::웹호스팅::견적문의접수();
+}
+
+// super: 현재 Module의 부모
+// use: 긴 Module 경로를 줄임.
+// self: 현재 Module
+
+mod 구매작업 {
+    pub enum 추가수입 {
+        coupon,
+        rebate,
+    }
+}
+
+// use crate::구매작업::추가수입;
+
+fn 기대추가수입() {
+    let order1 = 추가수입::coupon;
+    let order2 = 추가수입::rebate;
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+}
+
+mod client;
+mod network;
+```
+
+<hr>
+
+_-마침(End)-_
